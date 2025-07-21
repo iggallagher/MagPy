@@ -2,8 +2,9 @@ import numpy as np
 
 def get_digits(n):
     if not (isinstance(n, int) and n >= 0):
-        raise ValueError('Input n must be non-negative integer')    
-    digits = [int(d) for d in str(n)]
+        raise ValueError('Input n must be non-negative integer')
+        
+    digits = np.array([int(d) for d in str(n)])
     return digits
 
 def get_digit(n, i):
@@ -11,6 +12,10 @@ def get_digit(n, i):
 
 def num_digits(n):
     return len(get_digits(n))
+
+def is_unique_digits(n):
+    digits = get_digits(n)
+    return len(np.unique(digits)) == len(digits)
 
 def num_reverse(n):
     digits = get_digits(n)[::1]
