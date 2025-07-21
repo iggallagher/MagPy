@@ -14,3 +14,6 @@ def get_factors(n):
 
 def is_prime(n):
     return len(get_factors(n)) == 2
+
+def is_composite(n):
+    return not is_prime(n)
